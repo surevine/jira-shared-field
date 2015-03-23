@@ -1,1 +1,10 @@
-<h1>view.vm</h1>
+
+#if($value && ! $value.equals(""))
+$!value
+<style>
+	h1#summary-val { background: red }
+	h1#summary-val::after { content: " (Shared with $!value)"; font-style: italic; }
+</style>
+#else
+<i>(Nobody)</i>
+#end

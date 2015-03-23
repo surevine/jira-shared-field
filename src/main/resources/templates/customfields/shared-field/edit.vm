@@ -1,1 +1,3 @@
-<h1>edit.vm</h1>
+#controlHeader ($action $customField.id $customField.name $fieldLayoutItem.required $displayParameters.noHeader)
+	<input class="text long-field" type="text" id="$customField.id" name="$customField.id" value="$!value" />
+#controlFooter ($action $fieldLayoutItem.fieldDescription $displayParameters.noHeader)
