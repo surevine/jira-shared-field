@@ -1,32 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
-    <plugin-info>
-        <description>${project.description}</description>
-        <version>${project.version}</version>
-        <vendor name="${project.organization.name}" url="${project.organization.url}" />
-        <param name="plugin-icon">images/pluginIcon.png</param>
-        <param name="plugin-logo">images/pluginLogo.png</param>
-    </plugin-info>
-
-    <!-- add our i18n resource -->
-    <resource type="i18n" name="i18n" location="shared-field"/>
-    
-    <!-- add our web resources -->
-    <web-resource key="shared-field-resources" name="shared-field Web Resources">
-        <dependency>com.atlassian.auiplugin:ajs</dependency>
-        
-        <resource type="download" name="shared-field.css" location="/css/shared-field.css"/>
-        <resource type="download" name="shared-field.js" location="/js/shared-field.js"/>
-        <resource type="download" name="images/" location="/images"/>
-
-        <context>shared-field</context>
-    </web-resource>
-    
-    <!-- publish our component -->
-    <component key="myPluginComponent" class="com.surevine.jira.MyPluginComponentImpl" public="true">
-        <interface>com.surevine.jira.MyPluginComponent</interface>
-    </component>
-    
-    <!-- import from the product container -->
-    <component-import key="applicationProperties" interface="com.atlassian.sal.api.ApplicationProperties" />
-    
+  <plugin-info>
+    <description>${project.description}</description>
+    <version>${project.version}</version>
+    <vendor name="${project.organization.name}" url="${project.organization.url}"/>
+    <param name="plugin-icon">images/pluginIcon.png</param>
+    <param name="plugin-logo">images/pluginLogo.png</param>
+  </plugin-info>
+  <!-- add our i18n resource -->
+  <resource type="i18n" name="i18n" location="shared-field"/>
+  <!-- add our web resources -->
+  <web-resource key="shared-field-resources" name="shared-field Web Resources">
+    <dependency>com.atlassian.auiplugin:ajs</dependency>
+    <resource type="download" name="shared-field.css" location="/css/shared-field.css"/>
+    <resource type="download" name="shared-field.js" location="/js/shared-field.js"/>
+    <resource type="download" name="images/" location="/images"/>
+    <context>shared-field</context>
+  </web-resource>
+  <!-- publish our component -->
+  <component key="myPluginComponent" class="com.surevine.jira.MyPluginComponentImpl" public="true">
+    <interface>com.surevine.jira.MyPluginComponent</interface>
+  </component>
+  <!-- import from the product container -->
+  <component-import key="applicationProperties" interface="com.atlassian.sal.api.ApplicationProperties"/>
+  <customfield-type name="Shared Field" i18n-name-key="shared-field.name" key="shared-field" class="com.surevine.jira.customfields.SharedField">
+    <description key="shared-field.description">The Shared Field Plugin</description>
+    <resource name="view" type="velocity" location="/templates/customfields/shared-field/view.vm"/>
+    <resource name="edit" type="velocity" location="/templates/customfields/shared-field/edit.vm"/>
+  </customfield-type>
 </atlassian-plugin>
