@@ -1,0 +1,39 @@
+$!value
+<script><!--
+
+var defaultRoleName = null;
+var customRoleSelected = false;
+
+jQuery.noConflict();
+
+function checkRoleConfig() {
+  if (defaultRoleName != null) return;
+  jQuery("select#commentLevel optgroup option").each(function(idx) {
+    if (jQuery(this).text() == "$!value") {
+      defaultRoleName = jQuery(this).val();
+      return false;
+    }
+    return true;
+  });
+}
+
+function changeCommentLevel() {
+  if (customRoleSelected) return;
+  checkRoleConfig();
+
+  var commentLevelSelect = jQuery('.security-level select#commentLevel option[value=\'' + defaultRoleName + '\']');
+  if (commentLevelSelect) {
+    var labelText = commentLevelSelect.first().text();
+        jQuery("select#commentLevel").val(defaultRoleName);
+        jQuery("#commentLevel-multi-select a.drop span.icon").removeClass("icon-unlocked").addClass("icon-locked");
+        var htmlEscapedLabel = AJS.$("<div/>").text(labelText).html();
+        jQuery(".security-level span.current-level").html(AJS.format(AJS.params.securityLevelViewableRestrictedTo, htmlEscapedLabel));
+  }
+}
+
+jQuery('#footer-comment-button').live('focus', changeCommentLevel);
+jQuery('#commentLevel-suggestions').live('click', function(){ customRoleSelected = true; });
+jQuery('#issue-comment-add-submit').live('click', function(){ customRoleSelected = false; });
+jQuery('#issue-comment-add-cancel').live('click', function(){ customRoleSelected = false; });
+
+//--></script>

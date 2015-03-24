@@ -29,4 +29,9 @@
     <resource name="view" type="velocity" location="/templates/customfields/shared-field/view.vm"/>
     <resource name="edit" type="velocity" location="/templates/customfields/shared-field/edit.vm"/>
   </customfield-type>
+  <customfield-type name="Default Comment Security" i18n-name-key="default-comment-security.name" key="default-comment-security" class="com.surevine.jira.jira.customfields.DefaultCommentSecurity">
+    <description key="default-comment-security.description">The Default Comment Security Plugin</description>
+    <resource name="view" type="velocity" location="/templates/customfields/default-comment-security/view.vm"/>
+    <resource name="edit" type="velocity" location="/templates/customfields/default-comment-security/edit.vm"/>
+  </customfield-type>
 </atlassian-plugin>
