@@ -1,3 +1,8 @@
 #controlHeader ($action $customField.id $customField.name $fieldLayoutItem.required $displayParameters.noHeader)
-	<input class="text long-field" type="text" id="$customField.id" name="$customField.id" value="$!value" />
+#if($value && ! $value.equals(""))
+#set ($checked = "checked=\"checked\"")
+#else
+#set ($checked = "")
+#end 
+	<input type="checkbox" id="$customField.id" name="$customField.id" value="externally" $!checked/>
 #controlFooter ($action $fieldLayoutItem.fieldDescription $displayParameters.noHeader)

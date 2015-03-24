@@ -1,9 +1,9 @@
 
 #if($value && ! $value.equals(""))
-$!value
+External partners
 <style>
-	h1#summary-val { background: red }
-	h1#summary-val::after { content: " (Shared with $!value)"; font-style: italic; }
+	h1#summary-val { border: 4px solid cyan }
+	h1#summary-val::after { content: " (Shared externally)"; font-style: italic; }
 </style>
 #else
 <i>(Nobody)</i>
