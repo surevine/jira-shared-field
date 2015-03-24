@@ -1,9 +1,10 @@
-package ut.com.surevine.jira.jira.customfields;
+package ut.com.surevine.jira.customfields;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import com.surevine.jira.jira.customfields.DefaultCommentSecurity;
+
+import com.surevine.jira.customfields.DefaultCommentSecurity;
 
 import static org.mockito.Mockito.*;
 
