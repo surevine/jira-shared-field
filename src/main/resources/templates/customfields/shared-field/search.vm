@@ -1,0 +1,11 @@
+#disable_html_escaping()
+$!{auiparams.put("controlHeaderClass", "aui-field-text")}
+#searcherEditHeader (${customField.id} ${customField.name})
+#if($value && ! $value.equals(""))
+#set ($checked = "checked=\"checked\"")
+#else
+#set ($checked = "")
+#end 
+	<input type="checkbox" id="$customField.id" name="$customField.id" value="externally" $!checked/>
+#searcherEditFooter (${customField.id} ${customField.descriptionProperty.viewHtml})
+$!{auiparams.clear()}

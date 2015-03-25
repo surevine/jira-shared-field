@@ -29,6 +29,22 @@
     <resource name="view" type="velocity" location="/templates/customfields/shared-field/view.vm"/>
     <resource name="edit" type="velocity" location="/templates/customfields/shared-field/edit.vm"/>
   </customfield-type>
+  <customfield-searcher key="shared-searcher" name="Shared Present Searcher"
+      i18n-name-key="admin.customfield.searcher.textsearcher.name"
+      class="com.atlassian.jira.issue.customfields.searchers.TextSearcher">
+    <description key="admin.customfield.searcher.textsearcher.desc">Search for fixed values used with checkbox.</description>
+    <resource type="velocity" name="search" location="/templates/customfields/shared-field/search.vm"/>
+    <resource type="velocity" name="view" location="/templates/customfields/shared-field/search-view.vm"/>
+    <valid-customfield-type package="${project.groupId}.${project.artifactId}" key="shared-field"/>
+  </customfield-searcher>
+  <!-- <customfield-searcher key="textsearcher" name="Free Text Searcher" i18n-name-key="admin.customfield.searcher.textsearcher.name" class="com.atlassian.jira.issue.customfields.searchers.TextSearcher">
+	<description key="admin.customfield.searcher.textsearcher.desc">Search for values using a free text search.</description>
+	<resource type="velocity" name="search" location="templates/plugins/fields/edit-searcher/search-basictext.vm"/>
+	<resource type="velocity" name="view" location="templates/plugins/fields/view-searcher/view-searcher-basictext.vm"/>
+	<valid-customfield-type package="${project.groupId}.${project.artifactId}" key="shared-field"/>
+  </customfield-searcher> -->
+
+  
   <customfield-type name="Default Comment Security" i18n-name-key="default-comment-security.name" key="default-comment-security" class="com.surevine.jira.customfields.DefaultCommentSecurity">
     <description key="default-comment-security.description">The Default Comment Security Plugin</description>
     <resource name="view" type="velocity" location="/templates/customfields/default-comment-security/view.vm"/>
