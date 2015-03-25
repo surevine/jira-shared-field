@@ -4,6 +4,7 @@ External partners
 <style>
 	h1#summary-val { border: 4px solid cyan }
 	h1#summary-val::after { content: " (Shared externally)"; font-style: italic; }
+	h1#summary-val.active::after { content: none; }
 </style>
 #else
 <i>(Nobody)</i>

@@ -12,6 +12,23 @@
     <name>Federation Support Plugin</name>
     <description>This is the Surevine Federation support plugin for Atlassian JIRA.</description>
     <packaging>atlassian-plugin</packaging>
+
+    <repositories>
+        <repository>
+            <id>atlassian-public</id>
+            <url>https://maven.atlassian.com/repository/public</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>com.atlassian.jira</groupId>
