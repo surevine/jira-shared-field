@@ -8,8 +8,10 @@
     <param name="plugin-icon">images/pluginIcon.png</param>
     <param name="plugin-logo">images/pluginLogo.png</param>
   </plugin-info>
+
   <!-- add our i18n resource -->
   <resource type="i18n" name="i18n" location="shared-field"/>
+
   <!-- add our web resources -->
   <web-resource key="shared-field-resources" name="shared-field Web Resources">
     <dependency>com.atlassian.auiplugin:ajs</dependency>
@@ -18,10 +20,12 @@
     <resource type="download" name="images/" location="/images"/>
     <context>shared-field</context>
   </web-resource>
+
   <!-- publish our component -->
   <component key="myPluginComponent" class="com.surevine.jira.MyPluginComponentImpl" public="true">
     <interface>com.surevine.jira.MyPluginComponent</interface>
   </component>
+
   <!-- import from the product container -->
   <component-import key="applicationProperties" interface="com.atlassian.sal.api.ApplicationProperties"/>
   <customfield-type name="Shared Field" i18n-name-key="shared-field.name" key="shared-field" class="com.surevine.jira.customfields.SharedField">
@@ -37,17 +41,11 @@
     <resource type="velocity" name="view" location="/templates/customfields/shared-field/search-view.vm"/>
     <valid-customfield-type package="${project.groupId}.${project.artifactId}" key="shared-field"/>
   </customfield-searcher>
-  <!-- <customfield-searcher key="textsearcher" name="Free Text Searcher" i18n-name-key="admin.customfield.searcher.textsearcher.name" class="com.atlassian.jira.issue.customfields.searchers.TextSearcher">
-	<description key="admin.customfield.searcher.textsearcher.desc">Search for values using a free text search.</description>
-	<resource type="velocity" name="search" location="templates/plugins/fields/edit-searcher/search-basictext.vm"/>
-	<resource type="velocity" name="view" location="templates/plugins/fields/view-searcher/view-searcher-basictext.vm"/>
-	<valid-customfield-type package="${project.groupId}.${project.artifactId}" key="shared-field"/>
-  </customfield-searcher> -->
 
-  
   <customfield-type name="Default Comment Security" i18n-name-key="default-comment-security.name" key="default-comment-security" class="com.surevine.jira.customfields.DefaultCommentSecurity">
     <description key="default-comment-security.description">The Default Comment Security field sets the default comment security level for all future comments.</description>
     <resource name="view" type="velocity" location="/templates/customfields/default-comment-security/view.vm"/>
     <resource name="edit" type="velocity" location="/templates/customfields/default-comment-security/edit.vm"/>
   </customfield-type>
+
 </atlassian-plugin>

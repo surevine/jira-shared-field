@@ -4,13 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.surevine.jira</groupId>
     <artifactId>shared-field</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <organization>
         <name>Surevine Ltd</name>
-        <url>http://www.surevine.com/</url>
+        <url>https://www.surevine.com/</url>
     </organization>
-    <name>Federation Support Plugin</name>
-    <description>This is the Surevine Federation support plugin for Atlassian JIRA.</description>
+    <name>Community Portal Federation Support Plugin</name>
+    <description>This plugin provides control over which issues are federated to external partners via the community portal.</description>
     <packaging>atlassian-plugin</packaging>
 
     <repositories>
