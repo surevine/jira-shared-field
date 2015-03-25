@@ -6,11 +6,11 @@
     <artifactId>shared-field</artifactId>
     <version>1.0-SNAPSHOT</version>
     <organization>
-        <name>Example Company</name>
-        <url>http://www.example.com/</url>
+        <name>Surevine Ltd</name>
+        <url>http://www.surevine.com/</url>
     </organization>
-    <name>shared-field</name>
-    <description>This is the com.surevine.jira:shared-field plugin for Atlassian JIRA.</description>
+    <name>Federation Support Plugin</name>
+    <description>This is the Surevine Federation support plugin for Atlassian JIRA.</description>
     <packaging>atlassian-plugin</packaging>
     <dependencies>
         <dependency>
