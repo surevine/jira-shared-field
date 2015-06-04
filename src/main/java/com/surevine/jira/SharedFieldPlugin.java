@@ -1,6 +1,6 @@
 package com.surevine.jira;
 
-public interface MyPluginComponent
+public interface SharedFieldPlugin
 {
     String getName();
 }

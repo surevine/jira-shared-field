@@ -2,11 +2,11 @@ package com.surevine.jira;
 
 import com.atlassian.sal.api.ApplicationProperties;
 
-public class MyPluginComponentImpl implements MyPluginComponent
+public class SharedFieldPluginImpl implements SharedFieldPlugin
 {
     private final ApplicationProperties applicationProperties;
 
-    public MyPluginComponentImpl(ApplicationProperties applicationProperties)
+    public SharedFieldPluginImpl(ApplicationProperties applicationProperties)
     {
         this.applicationProperties = applicationProperties;
     }
@@ -15,9 +15,9 @@ public class MyPluginComponentImpl implements MyPluginComponent
     {
         if(null != applicationProperties)
         {
-            return "myComponent:" + applicationProperties.getDisplayName();
+            return "sharedFieldPlugin:" + applicationProperties.getDisplayName();
         }
         
-        return "myComponent";
+        return "sharedFieldPlugin";
     }
 }
