@@ -22,8 +22,8 @@
   </web-resource>
 
   <!-- publish our component -->
-  <component key="myPluginComponent" class="com.surevine.jira.MyPluginComponentImpl" public="true">
-    <interface>com.surevine.jira.MyPluginComponent</interface>
+  <component key="sharedFieldPlugin" class="com.surevine.jira.SharedFieldPluginImpl" public="true">
+    <interface>com.surevine.jira.SharedFieldPlugin</interface>
   </component>
 
   <!-- import from the product container -->
